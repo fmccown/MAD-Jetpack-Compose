@@ -67,31 +67,6 @@ fun TaskList(
 }
 
 @Composable
-fun SwipeBackground(
-   dismissState: SwipeToDismissBoxState,
-   modifier: Modifier = Modifier
-) {
-   Row(
-      modifier
-         .fillMaxSize()
-         .background(Color.Gray)
-   ) { }
-}
-
-@Composable
-fun TaskCard(
-   task: Task,
-   toggleCompleted: (Task) -> Unit,
-   modifier: Modifier = Modifier
-) {
-   Text(
-      text = task.body,
-      fontSize = 26.sp,
-      modifier = modifier.padding(start = 12.dp)
-   )
-}
-
-@Composable
 fun AddTaskInput(onEnterTask: (String) -> Unit) {
    val keyboardController = LocalSoftwareKeyboardController.current
    var taskBody by remember { mutableStateOf("") }
@@ -111,6 +86,19 @@ fun AddTaskInput(onEnterTask: (String) -> Unit) {
             keyboardController?.hide()
          }
       )
+   )
+}
+
+@Composable
+fun TaskCard(
+   task: Task,
+   toggleCompleted: (Task) -> Unit,
+   modifier: Modifier = Modifier
+) {
+   Text(
+      text = task.body,
+      fontSize = 26.sp,
+      modifier = modifier.padding(start = 12.dp)
    )
 }
 
