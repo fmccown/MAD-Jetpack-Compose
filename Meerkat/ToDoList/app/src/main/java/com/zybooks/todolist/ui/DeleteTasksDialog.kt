@@ -13,20 +13,17 @@ fun DeleteTasksDialog(
    onDismiss: () -> Unit
 ) {
    AlertDialog(
-      onDismissRequest = {
-         onDismiss()
-      },
+      onDismissRequest = onDismiss,
       title = {
-         Text(text = "Delete all completed tasks?")
+         Text("Delete all completed tasks?")
       },
       confirmButton = {
          Button(
             colors = ButtonDefaults.buttonColors(
                containerColor = MaterialTheme.colorScheme.primary
             ),
-            onClick = {
-               onConfirm()
-            }) {
+            onClick = onConfirm
+         ) {
             Text("Yes")
          }
       },
@@ -35,9 +32,8 @@ fun DeleteTasksDialog(
             colors = ButtonDefaults.buttonColors(
                containerColor = MaterialTheme.colorScheme.secondary
             ),
-            onClick = {
-               onDismiss()
-            }) {
+            onClick = onDismiss
+         ) {
             Text("No")
          }
       },
