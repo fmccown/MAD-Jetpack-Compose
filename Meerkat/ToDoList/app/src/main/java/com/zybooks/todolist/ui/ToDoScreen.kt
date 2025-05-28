@@ -1,6 +1,5 @@
 package com.zybooks.todolist.ui
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -84,7 +83,6 @@ fun ToDoScreen(
    }
 }
 
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun TaskList(
    taskList: List<Task>,
@@ -105,10 +103,12 @@ fun TaskList(
                      onDeleteTask(currentTask)
                      true
                   }
+
                   SwipeToDismissBoxValue.EndToStart -> {
                      onArchiveTask(currentTask)
                      true
                   }
+
                   else -> false
                }
             }
@@ -166,7 +166,6 @@ fun TaskCard(
 }
 
 @Composable
-@OptIn(ExperimentalMaterial3Api::class)
 fun SwipeBackground(
    dismissState: SwipeToDismissBoxState,
    modifier: Modifier = Modifier
