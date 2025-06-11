@@ -191,47 +191,6 @@ fun SwitchSetting(
    }
 }
 
-/*
-@Composable
-fun SliderPreference(
-   title: String,
-   initValue: Int,
-   valueRange: ClosedRange<Int>,
-   onValueChangeFinished: (Int) -> Unit,
-   modifier: Modifier = Modifier
-) {
-   var sliderPosition by remember { mutableFloatStateOf(initValue.toFloat()) }
-
-   Column {
-      Text(
-         text = title,
-         fontSize = 20.sp
-      )
-      Row(
-         verticalAlignment = Alignment.CenterVertically,
-         modifier = modifier.fillMaxWidth()
-      ) {
-         Slider(
-            value = sliderPosition,
-            steps = valueRange.endInclusive - valueRange.start - 1,
-            valueRange = valueRange.start.toFloat()..valueRange.endInclusive.toFloat(),
-            onValueChange = { sliderPosition = it.roundToInt().toFloat() },
-            onValueChangeFinished = {
-               onValueChangeFinished(sliderPosition.toInt())
-            },
-            modifier = modifier.weight(1f)
-         )
-         Text(sliderPosition.toInt().toString())
-      }
-   }
-
-   // Set initial slider position when initValue changes
-   LaunchedEffect(initValue) {
-      sliderPosition = initValue.toFloat()
-   }
-}
- */
-
 @Composable
 fun SliderSetting(
    title: String,
